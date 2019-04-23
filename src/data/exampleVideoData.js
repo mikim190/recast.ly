@@ -11,9 +11,9 @@ var exampleVideoData = [{
   snippet: {
     publishedAt: '2015-08-02T20:52:58.000Z',
     channelId: 'UCJbPGzawDH1njbqV-D5HqKw',
-    title: 'React JS Tutorial for Beginners - 1 - Introduction',
-    description: 'My website - https://www.thenewboston.com/videos.php Have questions about the tutorial or React? Ask them here ...',
-    thumbnails: {
+    title: 'React JS Tutorial for Beginners - 1 - Introduction', //88
+    description: 'My website - https://www.thenewboston.com/videos.php Have questions about the tutorial or React? Ask them here ...', //88
+    thumbnails: { //88
       default: {
         url: 'https://i.ytimg.com/vi/4ZAEBxGipoA/default.jpg',
         width: 120,
@@ -65,7 +65,7 @@ var exampleVideoData = [{
     channelTitle: '',
     liveBroadcastContent: 'none'
   }
-}, {
+}, {
   kind: 'youtube#searchResult',
   etag: 'abQHWywil_AkNqdqji7_FqiK-u4/FZYrgJg7qfkv0yfImJPujBKBmLk',
   id: {
@@ -97,7 +97,7 @@ var exampleVideoData = [{
     channelTitle: '',
     liveBroadcastContent: 'none'
   }
-}, {
+}, {
   kind: 'youtube#searchResult',
   etag: 'abQHWywil_AkNqdqji7_FqiK-u4/nSaavPWVkTWpn2p-ClwNj7xszf8',
   id: {
@@ -129,7 +129,7 @@ var exampleVideoData = [{
     channelTitle: 'bengrunfeld',
     liveBroadcastContent: 'none'
   }
-}, {
+}, {
   kind: 'youtube#searchResult',
   etag: 'abQHWywil_AkNqdqji7_FqiK-u4/3E7u1VZ18KYyfLIA6RgI2w-7nRI',
   id: {
