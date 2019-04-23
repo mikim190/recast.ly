@@ -25,12 +25,12 @@ var VideoList = (props) => (
   <div className='video-list'>
     {props.videos.map(prop => 
     // console.log('prop',prop)
-      <VideoListEntry video={prop}/>
+      <VideoListEntry onClick={function () {console.log('hello')}} video={prop}/>
     )}
   </div>
 );
 
-
+// console.log('hello')
 // var VideoList = () => (
 //   <div className="video-list">
 //     <div><h5><em>videoListEntry</em> view goes here</h5></div>

@@ -5,14 +5,14 @@ import exampleVideoData from '../data/exampleVideoData.js';
 class App extends React.Component {
   constructor (props) {
     super (props);
-    console.log('propssss', props);
-    // this.props = props
+   
     this.state = {
       playing: false
     };
   }  
 
   render () {
+    // console.log('proppps', this.props);
     return (
       <div>
         <nav className="navbar">

@@ -1,7 +1,9 @@
+// import VideoPlayer from "./VideoPlayer";
+
 
 var VideoListEntry = (prop) => ( 
-  // console.log('prop',prop),
-  <div className="video-list-entry media">
+ 
+  <div className="video-list-entry media" onClick={function(){console.log('hello')}}>
     <div className="media-left media-middle">
       <img className="media-object" src={prop.video.snippet.thumbnails.default.url} alt="" />
     </div>
