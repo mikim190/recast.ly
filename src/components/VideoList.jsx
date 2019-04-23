@@ -12,11 +12,20 @@ import VideoListEntry from './VideoListEntry.js';
 //   }
 // }
 
+// var VideoList = function (props) { //[{1},{2},{3}]
+//   return props.map(function(prop) {  // {1}--{2}
+//     return VideoListEntry(prop); //{1'} --{2'}
+//   });
+// } 
+
+// //{1'} {2'} {3'}
+// VideoList(exampleVideoData)
+//----------
 var VideoList = (props) => (
-  console.log(props),
   <div className='video-list'>
     {props.videos.map(prop => 
-      <VideoListEntry list={prop}/>
+    // console.log('prop',prop)
+      <VideoListEntry video={prop}/>
     )}
   </div>
 );
