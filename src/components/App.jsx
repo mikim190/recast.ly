@@ -1,10 +1,12 @@
 import VideoPlayer from './VideoPlayer.js';
 import VideoList from './VideoList.js';
 import exampleVideoData from '../data/exampleVideoData.js';
+import Search from './Search.js';
+import YOUTUBE_API_KEY from '../config/youtube.js';
 
 class App extends React.Component {
-  constructor () {
-    super ();
+  constructor (props) {
+    super (props);
    
     this.state = { 
       currentVideo: exampleVideoData[0],
@@ -12,13 +14,20 @@ class App extends React.Component {
     };
     this.clicker = this.clicker.bind(this);
   }  
+  componentDidMount() {
+    this.onSearch();
+  }
   
-
-  clicker (video) {
-    this.setState({
-      currentVideo: video
+  onSearch(term) {
+    this.props.searchYouTube({key: YOUTUBE_API_KEY, query: searchTerms, max: 5}, (data) => {
+      this.setState({currentVideo: data[0], videoList: data});
     });
- 
+  }
+
+  onClick(videoInd) {
+    this.setState({
+      currentVideo: this.state.videos[videoInd]
+    });
   }
     
   
@@ -28,15 +37,15 @@ class App extends React.Component {
       <div>
         <nav className="navbar">
           <div className="col-md-6 offset-md-3">
-            <div><h5><em>Sh</em> view goes here</h5></div>
+            <Search onSearch={this.onSearch.bind(this)}/>
           </div>
         </nav>
         <div className="row">
           <div className="col-md-7">
-            <div><h5><em><VideoPlayer video={this.state.currentVideo}/></em></h5></div>
+             {this.state.currentVideo !== null ? <VideoPlayer video={this.state.currentVideo}/> : null}        
           </div>
           <div className="col-md-5">
-            <div><h5><em><VideoList clicker={this.clicker} videos={this.state.videoList} /></em> </h5></div>
+            {this.state.videoList.length > 0 && <VideoList videos={this.state.videoList} onClick={this.onClick.bind(this)}/>}
           </div>
         </div>
       </div>
@@ -44,33 +53,6 @@ class App extends React.Component {
   }
   
 }
-
-
-
-
-
-//Functional (Stateless) component
-//Takes a props as arguments and return React component, render to DOM
-// var App = () => (
-//   <div>
-//     <nav className="navbar">
-//       <div className="col-md-6 offset-md-3">
-//         <div><h5><em>Search</em> view goes here</h5></div>
-//       </div>
-//     </nav>
-//     <div className="row">
-//       <div className="col-md-7">
-//         <div><h5><em><VideoPlayer video={exampleVideoData[1]}/></em></h5></div>
-//       </div>
-//       <div className="col-md-5">
-//         <div><h5><em><VideoList videos={exampleVideoData}/></em> </h5></div>
-//       </div>
-//     </div>
-//   </div>
-// );
-
-
-
 
 
 // In the ES6 spec, files are "modules" and do not share a top-level scope
