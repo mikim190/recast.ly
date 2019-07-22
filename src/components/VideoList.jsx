@@ -5,7 +5,7 @@ var VideoList = (props) => (
   <div className='video-list'>
     {props.videos.map((video, index) => 
     // console.log('prop',prop)
-      <VideoListEntry clicker={props.clicker} video={video} key={index} />
+      <VideoListEntry onClick={props.onClick !== null ? props.onClick.bind(null, i) : null} video={video} key={index} />
     )}
   </div>
 );
