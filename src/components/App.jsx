@@ -12,7 +12,7 @@ class App extends React.Component {
       currentVideo: exampleVideoData[0],
       videoList: exampleVideoData
     };
-    this.clicker = this.clicker.bind(this);
+    this.onClick = this.onClick.bind(this);
   }  
   componentDidMount() {
     this.onSearch();
